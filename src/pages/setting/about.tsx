@@ -13,7 +13,7 @@ const About = ({ systemInfo }: { systemInfo: SharedContext['systemInfo'] }) => {
       <img
         alt="logo"
         style={{ width: 140, marginRight: 20 }}
-        src="https://qn.whyour.cn/logo.png"
+        src="/logo.png"
       />
       <div className={styles.right}>
         <span className={styles.title}>{intl.get('青龙')}</span>

@@ -257,7 +257,7 @@ export default function () {
       ErrorBoundary={Sentry.ErrorBoundary}
       logo={
         <>
-          <Image preview={false} src="https://qn.whyour.cn/logo.png" />
+          <Image preview={false} src="/logo.png" />
           <div className="title">
             <span className="title">{intl.get('青龙')}</span>
             <a

@@ -54,7 +54,7 @@ export class ChatNotification extends NotificationBaseInfo {
 
 export class BarkNotification extends NotificationBaseInfo {
   public barkPush = '';
-  public barkIcon = 'https://qn.whyour.cn/logo.png';
+  public barkIcon = '/logo.png';
   public barkSound = '';
   public barkGroup = 'qinglong';
   public barkLevel = 'active';
