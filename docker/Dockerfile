@@ -9,9 +9,9 @@ RUN set -x \
 
 FROM python:3.11-alpine
 
-ARG QL_MAINTAINER="whyour"
+ARG QL_MAINTAINER="MiV1N"
 LABEL maintainer="${QL_MAINTAINER}"
-ARG QL_URL=https://github.com/${QL_MAINTAINER}/qinglong.git
+ARG QL_URL=https://github.com/${QL_MAINTAINER}/qinglong-plane.git
 ARG QL_BRANCH=develop
 
 ENV PNPM_HOME=/root/.local/share/pnpm \
@@ -67,12 +67,9 @@ RUN git clone --depth=1 -b ${QL_BRANCH} ${QL_URL} ${QL_DIR} \
   && cd ${QL_DIR} \
   && cp -f .env.example .env \
   && chmod 777 ${QL_DIR}/shell/*.sh \
-  && chmod 777 ${QL_DIR}/docker/*.sh \
-  && git clone --depth=1 -b ${QL_BRANCH} https://github.com/${QL_MAINTAINER}/qinglong-static.git /static \
-  && mkdir -p ${QL_DIR}/static \
-  && cp -rf /static/* ${QL_DIR}/static \
-  && rm -rf /static
+  && chmod 777 ${QL_DIR}/docker/*.sh 
 
+COPY ./static ${QL_DIR}/static
 COPY --from=builder /tmp/build/node_modules/. /ql/node_modules/
 
 WORKDIR ${QL_DIR}
