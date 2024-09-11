@@ -13,7 +13,7 @@ export default defineConfig({
   },
   outputPath: 'static/dist',
   fastRefresh: true,
-  favicons: [`static/favicon.svg`],
+  favicons: ['/favicon.png'],
   publicPath: process.env.NODE_ENV === 'production' ? './' : '/',
   proxy: {
     [`${baseUrl}api/update`]: {
@@ -58,17 +58,12 @@ export default defineConfig({
       to: 'static/dist/monaco-editor/min/vs',
     },
     {
-      from: './src/assets/static/react.production.min.js', // 将 React 脚本的本地路径更新到这里
+      from: '/react.production.min.js', // 将 React 脚本的本地路径更新到这里
       to: 'static/react.production.min.js',
     },
     {
-      from: './src/assets/static/react-dom.production.min.js', // 将 ReactDOM 脚本的本地路径更新到这里
+      from: '/react-dom.production.min.js', // 将 ReactDOM 脚本的本地路径更新到这里
       to: 'static/react-dom.production.min.js',
-    },
-    {
-      from: './src/assets/static/favicon.svg', // 将 ReactDOM 脚本的本地路径更新到这里
-      to: 'static/favicon.svg',
-    },
-    
+    }    
   ],
 });
