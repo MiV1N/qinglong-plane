@@ -8,7 +8,7 @@ pnpm build:back
 # cd ./tmp
 # cp -rf ../static/* ./
 
-docker build -t qinglong:v1 docker/Dockerfile
+docker build -t qinglong:v1 docker/
 
 
 
