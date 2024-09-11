@@ -13,7 +13,7 @@ export default defineConfig({
   },
   outputPath: 'static/dist',
   fastRefresh: true,
-  favicons: [`./src/assets/static/favicon.svg`],
+  favicons: [`static/favicon.svg`],
   publicPath: process.env.NODE_ENV === 'production' ? './' : '/',
   proxy: {
     [`${baseUrl}api/update`]: {
@@ -65,5 +65,10 @@ export default defineConfig({
       from: './src/assets/static/react-dom.production.min.js', // 将 ReactDOM 脚本的本地路径更新到这里
       to: 'static/react-dom.production.min.js',
     },
+    {
+      from: './src/assets/static/favicon.svg', // 将 ReactDOM 脚本的本地路径更新到这里
+      to: 'static/favicon.svg',
+    },
+    
   ],
 });
