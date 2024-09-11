@@ -49,8 +49,8 @@ export default defineConfig({
   },
   headScripts: [
     `./api/env.js`,
-    `./static/react.production.min.js`, 
-    `./static/react-dom.production.min.js`, 
+    `./static/dist/react.production.min.js`, 
+    `./static/dist/react-dom.production.min.js`, 
   ],
   copy: [
     {
@@ -58,12 +58,12 @@ export default defineConfig({
       to: 'static/dist/monaco-editor/min/vs',
     },
     {
-      from: '/react.production.min.js', // 将 React 脚本的本地路径更新到这里
-      to: 'static/react.production.min.js',
+      from: './public/react.production.min.js', // 将 React 脚本的本地路径更新到这里
+      to: 'static/dist/react.production.min.js',
     },
     {
-      from: '/react-dom.production.min.js', // 将 ReactDOM 脚本的本地路径更新到这里
-      to: 'static/react-dom.production.min.js',
+      from: './public/react-dom.production.min.js', // 将 ReactDOM 脚本的本地路径更新到这里
+      to: 'static/dist/react-dom.production.min.js',
     }    
   ],
 });
